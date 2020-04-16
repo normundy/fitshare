@@ -1,5 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.views import generic
+from django.utils import timezone
 
 from .models import Workout
 
@@ -12,5 +13,5 @@ class IndexView(generic.ListView):
         Return 10 of the most recent workouts
         """
         return Workout.objects.filter(
-            pub_date__lte=timezone.now()
+            created_date__lte=timezone.now()
         ).order_by('-created_date')[:10]
