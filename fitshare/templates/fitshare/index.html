@@ -1,0 +1,10 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'fitshare/style.css' %}">
+
+{% for workout in new_workout_list %}
+<p>
+  Workout name: {{ workout.name  }}
+</p>
+<br>
+{% endfor %}
