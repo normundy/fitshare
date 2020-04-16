@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+import datetime
 
 class WorkoutType(models.Model):
     type = models.CharField(max_length=200)
@@ -16,6 +17,7 @@ class ExerciseType(models.Model):
 class Workout(models.Model):
     name = models.CharField(max_length=200)
     type_id = models.ForeignKey(WorkoutType, on_delete=models.CASCADE)
+    created_date = models.DateTimeField('created date')
 
     def __str__(self):
         return self.name
