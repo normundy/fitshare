@@ -1,4 +1,4 @@
-{% if notification %}<p>{{ notification }}/p>{% endif %}
+{% if notification %}<p>{{ notification }}</p>{% endif %}
 
 <form action="{% url 'fitshare:create_workout_submit' %}" method="post">
   {% csrf_token %}
@@ -6,8 +6,6 @@
   <input type="text" id="workout_name" name="workout_name"><br>
   <label for="workout_type">Workout type</label><br>
   <input type="text" id="workout_type" name="workout_type"><br>
-  <label for="workout_description">Workout description</label><br>
-  <input type="text" id="workout_description" name="workout_description"><br>
   <div id="exercise_section">
     <input type="button" id="add_exercise" name="add_exercise" value="Add exercise" onclick="addExercise()"></button><br>
   </div>
@@ -15,19 +13,24 @@
 </form>
 
 <script>
+  var workout_e_count = 0;
+
   function addExercise() {
     var exercise = `
-      <label for=\"exercise_name\">Exercise name</label><br>
-      <select id=\"exercise_name\" name=\"exercise_name\">
-        <option value=\"test1\">test1</option>
-        <option value=\"test2\">test2</option>
-        <option value=\"test3\">test3</option>
+      <label for="exercise_name${workout_e_count}">Exercise name</label><br>
+      <select id="exercise_name${workout_e_count}" name="exercise_name${workout_e_count}">
+        {% for exercise in exercises_context %}
+        <option value="{{ exercise.name }}">{{ exercise.name }}</option>
+        {% endfor %}
       </select><br>
-      <label for=\"reps\">Reps</label><br>
-      <input type=\"text\" id=\"reps\" name="reps"><br>
-      <label for=\"sets\">Sets</label><br>
-      <input type=\"text\" id=\"sets\" name="sets"><br>
+      <label for="workout_e_description${workout_e_count}">Description</label><br>
+      <input type="text" id="workout_e_description${workout_e_count}" name="workout_e_description${workout_e_count}"><br>
+      <label for="reps${workout_e_count}">Reps</label><br>
+      <input type="text" id="reps${workout_e_count}" name="reps${workout_e_count}"><br>
+      <label for=\"sets${workout_e_count}\">Sets</label><br>
+      <input type="text" id="sets${workout_e_count}" name="sets${workout_e_count}"><br>
     `;
-    document.getElementById("exercise_section").innerHTML += exercise;
+    document.getElementById("exercise_section").insertAdjacentHTML('beforeend', exercise);
+    workout_e_count = workout_e_count + 1
   }
 </script>
