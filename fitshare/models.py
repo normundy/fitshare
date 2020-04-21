@@ -9,7 +9,7 @@ class Workout(models.Model):
     updated_date = models.DateTimeField('updated date')
 
     def __str__(self):
-        return self.name
+        return ("Name: " + self.name + " | Type: " + self.type)
 
 class Exercise(models.Model):
     name = models.CharField(max_length=200)
@@ -24,7 +24,7 @@ class Exercise(models.Model):
     updated_date = models.DateTimeField('updated date')
 
     def __str__(self):
-        return self.name
+        return "Name: " + self.name + " | Type: " + self.type + " | Target: " + self.target
 
 class Workout_e(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -35,4 +35,4 @@ class Workout_e(models.Model):
     reps = models.IntegerField()
 
     def __str__(self):
-        return self.desc
+        return "Username: " + self.user.username + " | Workout: " + self.workout_id.name + " | Exercise: " + self.exercise_id.name
