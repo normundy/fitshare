@@ -1,0 +1,33 @@
+{% if notification %}<p>{{ notification }}/p>{% endif %}
+
+<form action="{% url 'fitshare:create_workout_submit' %}" method="post">
+  {% csrf_token %}
+  <label for="workout_name">Workout name</label><br>
+  <input type="text" id="workout_name" name="workout_name"><br>
+  <label for="workout_type">Workout type</label><br>
+  <input type="text" id="workout_type" name="workout_type"><br>
+  <label for="workout_description">Workout description</label><br>
+  <input type="text" id="workout_description" name="workout_description"><br>
+  <div id="exercise_section">
+    <input type="button" id="add_exercise" name="add_exercise" value="Add exercise" onclick="addExercise()"></button><br>
+  </div>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  function addExercise() {
+    var exercise = `
+      <label for=\"exercise_name\">Exercise name</label><br>
+      <select id=\"exercise_name\" name=\"exercise_name\">
+        <option value=\"test1\">test1</option>
+        <option value=\"test2\">test2</option>
+        <option value=\"test3\">test3</option>
+      </select><br>
+      <label for=\"reps\">Reps</label><br>
+      <input type=\"text\" id=\"reps\" name="reps"><br>
+      <label for=\"sets\">Sets</label><br>
+      <input type=\"text\" id=\"sets\" name="sets"><br>
+    `;
+    document.getElementById("exercise_section").innerHTML += exercise;
+  }
+</script>
