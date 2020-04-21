@@ -4,7 +4,20 @@
 
 {% for workout in new_workout_list %}
 <p>
-  Workout name: {{ workout.name  }}
+  Workout name: {{ workout.workout_id.name  }} <br>
+  Workout type: {{ workout.workout_id.type }} <br>
+  Exercise name: {{ workout.exercise_id.name }} <br>
+  Exercise type: {{ workout.exercise_id.type }} <br>
+  Exercise target: {{ workout.exercise_id.target }} <br>
+  Exercise utility: {{ workout.exercise_id.utility }} <br>
+  Exercise mechanic: {{ workout.exercise_id.mechanic }} <br>
+  Exercise force: {{ workout.exercise_id.force }} <br>
+  Exercise type: {{ workout.exercise_id.type }} <br>
+  Exercise preparation: {{ workout.exercise_id.preparation }} <br>
+  Exercise execution: {{ workout.exercise_id.execution }} <br>
+  Workout exercise description: {{ workout.desc }} <br>
+  Workout exercise sets: {{ workout.sets }} <br>
+  Workout exercise reps: {{ workout.reps }} <br>
 </p>
 <br>
 {% endfor %}
