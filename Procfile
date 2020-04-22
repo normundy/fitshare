@@ -1,1 +1,1 @@
-web: gunicorn fitshare.wsgi --log-file -
+web: gunicorn fitshare_site.wsgi --log-file -
