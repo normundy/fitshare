@@ -29,7 +29,8 @@ def create_workout_submit(request):
     try:
         workout_name = request.POST['workout_name']
         workout_type = request.POST['workout_type']
-        workout = create_workout_tuple(workout_name, workout_type)
+        workout_useralias = request.POST['workout_useralias']
+        workout = create_workout_tuple(workout_name, workout_type, workout_useralias)
         exercise_name_list = []
         workout_e_description_list = []
         reps_list = []
@@ -56,10 +57,10 @@ def create_workout_submit(request):
         'notification': "Workout created",
     })
 
-def create_workout_tuple(workout_name, workout_type):
+def create_workout_tuple(workout_name, workout_type, workout_useralias):
     workout_created_date = timezone.now()
     workout_updated_date = timezone.now()
-    workout = Workout(name=workout_name, type=workout_type, \
+    workout = Workout(name=workout_name, type=workout_type, user_alias=workout_useralias, \
         created_date=workout_created_date, updated_date=workout_updated_date)
     workout.save()
     return workout

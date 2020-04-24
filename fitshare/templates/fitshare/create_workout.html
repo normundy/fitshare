@@ -6,6 +6,8 @@
   <input type="text" id="workout_name" name="workout_name"><br>
   <label for="workout_type">Workout type</label><br>
   <input type="text" id="workout_type" name="workout_type"><br>
+  <label for="user_alias">Guest name</label><br>
+  <input type="text" id="workout_useralias" name="workout_useralias"><br>
   <div id="exercise_section">
     <input type="button" id="add_exercise" name="add_exercise" value="Add exercise" onclick="addExercise()"></button><br>
   </div>
@@ -27,7 +29,7 @@
       <input type="text" id="workout_e_description${workout_e_count}" name="workout_e_description${workout_e_count}"><br>
       <label for="reps${workout_e_count}">Reps</label><br>
       <input type="text" id="reps${workout_e_count}" name="reps${workout_e_count}"><br>
-      <label for=\"sets${workout_e_count}\">Sets</label><br>
+      <label for="sets${workout_e_count}">Sets</label><br>
       <input type="text" id="sets${workout_e_count}" name="sets${workout_e_count}"><br>
     `;
     document.getElementById("exercise_section").insertAdjacentHTML('beforeend', exercise);
