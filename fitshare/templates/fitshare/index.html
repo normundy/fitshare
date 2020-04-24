@@ -2,22 +2,27 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'fitshare/style.css' %}">
 
-{% for workout in new_workout_list %}
+{% for workout, workout_exercises in new_workout_list.items %}
 <p>
-  Workout name: {{ workout.workout_id.name  }} <br>
-  Workout type: {{ workout.workout_id.type }} <br>
-  Exercise name: {{ workout.exercise_id.name }} <br>
-  Exercise type: {{ workout.exercise_id.type }} <br>
-  Exercise target: {{ workout.exercise_id.target }} <br>
-  Exercise utility: {{ workout.exercise_id.utility }} <br>
-  Exercise mechanic: {{ workout.exercise_id.mechanic }} <br>
-  Exercise force: {{ workout.exercise_id.force }} <br>
-  Exercise type: {{ workout.exercise_id.type }} <br>
-  Exercise preparation: {{ workout.exercise_id.preparation }} <br>
-  Exercise execution: {{ workout.exercise_id.execution }} <br>
-  Workout exercise description: {{ workout.desc }} <br>
-  Workout exercise sets: {{ workout.sets }} <br>
-  Workout exercise reps: {{ workout.reps }} <br>
+  Workout name: {{ workout.name }} <br>
+  Workout type: {{ workout.type }} <br>
+  Workout updated date: {{ workout.updated_date }} <br>
+  <br>
+    {% for exercise in workout_exercises %}
+      Exercise name: {{ exercise.exercise_id.name }} <br>
+      Exercise type: {{ exercise.exercise_id.type }} <br>
+      Exercise target: {{ exercise.exercise_id.target }} <br>
+      Exercise utility: {{ exercise.exercise_id.utility }} <br>
+      Exercise mechanic: {{ exercise.exercise_id.mechanic }} <br>
+      Exercise force: {{ exercise.exercise_id.force }} <br>
+      Exercise preparation: {{ exercise.exercise_id.preparation }} <br>
+      Exercise execution: {{ exercise.exercise_id.execution }} <br>
+      Exercise description: {{ exercise.desc }} <br>
+      Sets: {{ exercise.sets }} <br>
+      Reps: {{ exercise.reps }} <br>
+      <br>
+    {% endfor %}
+    <hr>
 </p>
 <br>
 {% endfor %}

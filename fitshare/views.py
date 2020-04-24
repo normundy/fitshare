@@ -12,7 +12,11 @@ class IndexView(generic.ListView):
     context_object_name = 'new_workout_list'
 
     def get_queryset(self):
-        return Workout_e.objects.select_related()
+        result = {}
+        w = Workout.objects.order_by('updated_date')[:10]
+        for workout in w:
+            result[workout] = Workout_e.objects.filter(workout_id=workout.id).select_related()
+        return result
 
 def create_workout(request):
     exercises = Exercise.objects.values('name').order_by('name')
