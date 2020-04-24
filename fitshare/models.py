@@ -5,6 +5,7 @@ import datetime
 class Workout(models.Model):
     name = models.CharField(max_length=200)
     type = models.CharField(max_length=200, null=True)
+    user_alias = models.CharField(max_length=200, null=True)
     created_date = models.DateTimeField('created date')
     updated_date = models.DateTimeField('updated date')
 
