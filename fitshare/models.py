@@ -31,9 +31,10 @@ class Workout_e(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     workout_id = models.ForeignKey(Workout, on_delete=models.CASCADE)
     exercise_id = models.ForeignKey(Exercise, on_delete=models.CASCADE)
-    desc = models.CharField(max_length=200)
-    sets = models.IntegerField()
-    reps = models.IntegerField()
+    desc = models.CharField(max_length=200, null=True)
+    sets = models.IntegerField(null = True)
+    reps = models.IntegerField(null = True)
+    time = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return "Username: " + self.user.username + " | Workout: " + self.workout_id.name + " | Exercise: " + self.exercise_id.name

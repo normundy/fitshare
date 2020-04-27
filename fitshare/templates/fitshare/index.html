@@ -1,29 +1,73 @@
-{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'fitshare/style.css' %}">
+  </head>
+  <body>
+    <div class="row">
+      <div class="column1">
+        <div class="navigation">
+          <span class="fitshare"><a href="/">Fitshare</a></span>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <span><a href="/workouts/">Workouts</a> | <a href="/login/">Login</a> | <a href="/register/">Register</a></span>
+        </div>
+        <div class="recent_workouts">
+          Recent Workouts
+        </div>
+        {% for workout in recent_workouts %}
+        <div class="workout">
+          <a href="/workouts/#/">- {{ workout.name }}</a>
+        </div>
+        {% endfor %}
+        <div class="footer">
+          <span><a href="/about/">About</a> | <a href="/contact/">Contact</a></span>
+        </div>
+      </div>
+      <div class="column2">
+        <form action="{% url 'fitshare:index' %}" method="post">
+          {% csrf_token %}
+          <div class="create_workout1">
+            <input type="text" id="workout_name" name="workout_name" placeholder="Workout name" value=""></input>
+            <select id="workout_type" name="workout_type">
+              <option value="" disabled selected>Workout type</option>
+              <option value="bodyweight">Bodyweight</option>
+              <option value="crossfit">Crossfit</option>
+              <option value="mixed">Mixed</option>
+              <option value="weighted">Weights</option>
+            </select>
+            <input type="button" class="add_exercise_button" id="add_exercise_button" name="add_exercise_button" value="Add exercise" onclick="addExercise()"></button></input>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="save_as_guest_button" type="submit" value="Save as guest"</input>
+            <span>Have an account? <a href="">Login</a> or <a href="">Register</a> today</span>
+          </div>
+          <div class="create_workout2" id="exercise0">
+            <input type="text" id="exercise_name0" name="exercise_name0"placeholder="Exercise name"></input>
+            <input type="text" id="sets0" name="sets0" placeholder="Sets"></input>
+            <input type="text" id="reps0" name="reps0" placeholder="Reps"></input>
+            <input type="text" id="time0" name="time0" placeholder="Time"></input>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      var workout_e_count = 1;
 
-<link rel="stylesheet" type="text/css" href="{% static 'fitshare/style.css' %}">
+      function addExercise() {
+        var previous_exercise = "exercise" + (workout_e_count - 1).toString();
+        var exercise = `
+        <div class="create_workout2" id="exercise${workout_e_count}">
+          <input type="text" id="exercise_name${workout_e_count}" name="exercise_name${workout_e_count}" placeholder="Exercise name"></input>
+          <input type="text" id="sets${workout_e_count}" name="sets${workout_e_count}" placeholder="Sets"></input>
+          <input type="text" id="reps${workout_e_count}" name="reps${workout_e_count}" placeholder="Reps"></input>
+          <input type="text" id="time${workout_e_count}" name="time${workout_e_count}" placeholder="Time"></input>
+        </div>
+        `;
 
-{% for workout, workout_exercises in new_workout_list.items %}
-<p>
-  Workout name: {{ workout.name }} <br>
-  Workout type: {{ workout.type }} <br>
-  Workout guest name: {{ workout.user_alias }} <br>
-  Workout updated date: {{ workout.updated_date }} <br>
-  <br>
-    {% for exercise in workout_exercises %}
-      Exercise name: {{ exercise.exercise_id.name }} <br>
-      Exercise type: {{ exercise.exercise_id.type }} <br>
-      Exercise target: {{ exercise.exercise_id.target }} <br>
-      Exercise utility: {{ exercise.exercise_id.utility }} <br>
-      Exercise mechanic: {{ exercise.exercise_id.mechanic }} <br>
-      Exercise force: {{ exercise.exercise_id.force }} <br>
-      Exercise preparation: {{ exercise.exercise_id.preparation }} <br>
-      Exercise execution: {{ exercise.exercise_id.execution }} <br>
-      Exercise description: {{ exercise.desc }} <br>
-      Sets: {{ exercise.sets }} <br>
-      Reps: {{ exercise.reps }} <br>
-      <br>
-    {% endfor %}
-    <hr>
-</p>
-<br>
-{% endfor %}
+        document.getElementById(previous_exercise).insertAdjacentHTML('afterend', exercise);
+        workout_e_count = workout_e_count + 1;
+      }
+    </script>
+  </body>
+</html>
