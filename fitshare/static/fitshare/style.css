@@ -1,0 +1,136 @@
+html, body {
+  height: 100%;
+  margin: 0;
+
+  font-family: Sans-Serif;
+}
+
+.row {
+  height: 100%;
+  display: flex;
+}
+
+.column1 {
+  flex: 25%;
+  height: 100%;
+  background: #333333;
+  color: white;
+}
+
+.column2 {
+  flex: 75%;
+  height: 100%;
+  background: white;
+}
+
+.navigation {
+  background: #c83737;
+
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+}
+
+.fitshare {
+  font-size: 30px;
+}
+
+#.fitshare a {
+  text-decoration: none;
+  color: white;
+}
+
+.recent_workouts {
+  font-size : 24px;
+  text-align: center;
+
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.workout {
+  font-size : 24px;
+
+  background-color: #67536c;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.create_workout1 {
+  background-color: #de8787;
+
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+
+.create_workout2 {
+  background-color: #f4d7d7;
+
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+
+.add_exercise_button {
+  background-color: #53536c;
+  color: white;
+
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+
+  border-radius: 10px;
+}
+
+.save_as_guest_button {
+  background-color: #c83737;
+  color: white;
+
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+
+  border-radius: 10px;
+}
