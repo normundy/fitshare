@@ -70,6 +70,11 @@ html, body {
   padding-left: 10px;
 }
 
+.workout a {
+  text-decoration: none;
+  color: white;
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -115,22 +120,28 @@ html, body {
   background-color: #53536c;
   color: white;
 
+  cursor:pointer;
+
   padding-top: 5px;
   padding-right: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
 
   border-radius: 10px;
+  border-color: #53536c;
 }
 
 .save_as_guest_button {
   background-color: #c83737;
   color: white;
 
+  cursor:pointer;
+
   padding-top: 5px;
   padding-right: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
 
   border-radius: 10px;
+  border-color: #c83737;
 }
