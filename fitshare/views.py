@@ -9,7 +9,7 @@ from .models import Workout_e, Workout, Exercise
 
 def index(request):
     # Get the 10 most recent workouts
-    recent_workouts = Workout.objects.order_by('updated_date')[:10]
+    recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
     # Handle workout form submission
     if request.method == 'POST':
@@ -62,7 +62,7 @@ def view_workout(request, workout_id):
     workout = Workout.objects.get(id=workout_id)
 
     # Get the 10 most recent workouts
-    recent_workouts = Workout.objects.order_by('updated_date')[:10]
+    recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
     print(recent_workouts)
     print(workout_e)
