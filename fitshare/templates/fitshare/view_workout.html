@@ -18,7 +18,7 @@
         </div>
         {% for workout in recent_workouts %}
         <div class="workout">
-          <a href="/workouts/#/">- {{ workout.name }}</a>
+          <a href="/fitshare/view_workout/{{ workout.id }}">- {{ workout.name }}</a>
         </div>
         {% endfor %}
         <div class="footer">
