@@ -77,7 +77,7 @@ def view_workout(request, workout_id):
     return render(request, 'fitshare/view_workout.html', context=ctx)
 
 def workouts(request):
-    workouts = Workout.objects.all()
+    workouts = Workout.objects.all().order_by('-updated_date')
 
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
