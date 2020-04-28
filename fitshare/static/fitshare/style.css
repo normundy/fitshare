@@ -145,3 +145,50 @@ html, body {
   border-radius: 10px;
   border-color: #c83737;
 }
+
+.view_workout_user {
+  background-color: #ffe680ff;
+
+  text-align: center;
+  font-size: 24px;
+
+  flex: 25%;
+  height: 100%
+}
+
+.view_workout_user img {
+  width: 100px;
+  height: 100px;
+}
+
+.view_workout_one {
+  background-color: #f4d7d7;
+
+  flex: 50%;
+  height: 100%
+}
+
+.view_workout_one1 {
+  background-color: #de8787;
+
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+
+.view_workout_one2 {
+  background-color: #f4d7d7;
+
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+  border-style: solid;
+  border-color: black;
+  border-width: thin;

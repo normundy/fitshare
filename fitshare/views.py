@@ -14,8 +14,6 @@ def index(request):
     # Handle workout form submission
     if request.method == 'POST':
         try:
-            for k, v in request.POST.items():
-                print(k, v)
             workout_name = request.POST['workout_name']
             workout_type = request.POST['workout_type']
             workout_useralias = "Guest"
@@ -58,6 +56,25 @@ def create_workout(request):
         'exercises_context': exercises,
     }
     return render(request, 'fitshare/create_workout.html', context=exercises_context)
+
+def view_workout(request, workout_id):
+    workout_e = Workout_e.objects.filter(workout_id=workout_id).select_related()
+    workout = Workout.objects.get(id=workout_id)
+
+    # Get the 10 most recent workouts
+    recent_workouts = Workout.objects.order_by('updated_date')[:10]
+
+    print(recent_workouts)
+    print(workout_e)
+    print(workout)
+
+    ctx = {
+        'recent_workouts': recent_workouts,
+        'workout_e': workout_e,
+        'workout': workout,
+    }
+
+    return render(request, 'fitshare/view_workout.html', context=ctx)
 
 def create_workout_tuple(workout_name, workout_type, workout_useralias):
     workout_created_date = timezone.now()
