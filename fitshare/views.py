@@ -76,6 +76,19 @@ def view_workout(request, workout_id):
 
     return render(request, 'fitshare/view_workout.html', context=ctx)
 
+def workouts(request):
+    workouts = Workout.objects.all()
+
+    # Get the 10 most recent workouts
+    recent_workouts = Workout.objects.order_by('-updated_date')[:10]
+
+    ctx = {
+        'workouts': workouts,
+        'recent_workouts': recent_workouts,
+    }
+
+    return render(request, 'fitshare/workouts.html', context=ctx)
+
 def create_workout_tuple(workout_name, workout_type, workout_useralias):
     workout_created_date = timezone.now()
     workout_updated_date = timezone.now()
