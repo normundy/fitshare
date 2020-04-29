@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf.urls import url
+from django.contrib.auth.views import LoginView, LogoutView
 
 from . import views
 
@@ -8,4 +10,6 @@ urlpatterns = [
     path('create_workout/', views.create_workout, name='create_workout'),
     path('workouts/', views.workouts, name='workouts'),
     path('view_workout/<int:workout_id>/', views.view_workout, name='view_workout'),
+    url(r'^login/$', LoginView.as_view(template_name='fitshare/login.html'), name='login'),
+    url(r'^logout/$', LogoutView.as_view(), name='logout'),
 ]

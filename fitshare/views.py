@@ -89,6 +89,7 @@ def workouts(request):
 
     return render(request, 'fitshare/workouts.html', context=ctx)
 
+
 def create_workout_tuple(workout_name, workout_type, workout_useralias):
     workout_created_date = timezone.now()
     workout_updated_date = timezone.now()
