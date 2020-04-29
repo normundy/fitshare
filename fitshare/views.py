@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.contrib.auth import views as auth_views
 
 from .models import Workout_e, Workout, Exercise
 
@@ -88,6 +89,21 @@ def workouts(request):
     }
 
     return render(request, 'fitshare/workouts.html', context=ctx)
+
+class FitshareLogin(auth_views.LoginView):
+    #template_name = 'login.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+
+        # Get the 10 most recent workouts
+        recent_workouts = Workout.objects.order_by('-updated_date')[:10]
+
+        ctx.update({
+            'recent_workouts': recent_workouts,
+        })
+
+        return ctx
 
 
 def create_workout_tuple(workout_name, workout_type, workout_useralias):
