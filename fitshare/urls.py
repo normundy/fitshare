@@ -10,7 +10,7 @@ urlpatterns = [
     path('create_workout/', views.create_workout, name='create_workout'),
     path('workouts/', views.workouts, name='workouts'),
     path('view_workout/<int:workout_id>/', views.view_workout, name='view_workout'),
-    #url(r'^login/$', LoginView.as_view(template_name='fitshare/login.html'), name='login'),
+    url(r'^register/$', views.register, name='register'),
     url(r'^login/$', views.FitshareLogin.as_view(template_name='fitshare/login.html'), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
 ]

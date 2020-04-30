@@ -1,10 +1,12 @@
 from django.http import HttpResponseRedirect
 from django.views import generic
+from django.views import View
 from django.utils import timezone
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.forms import UserCreationForm
 
 from .models import Workout_e, Workout, Exercise
 
@@ -105,6 +107,29 @@ class FitshareLogin(auth_views.LoginView):
 
         return ctx
 
+def register(request):
+    # Get the 10 most recent workouts
+    recent_workouts = Workout.objects.order_by('-updated_date')[:10]
+
+    ctx = {
+        'recent_workouts': recent_workouts,
+    }
+
+    if request.method == 'POST':
+        try:
+            username = request.POST['username']
+            password = request.POST['password']
+            user = User.objects.create_user(username=username, password=password)
+            user.save()
+        except (KeyError):
+            return render(request, 'fitshare/register', {
+                'notification': "Error creating user",
+            })
+        return HttpResponseRedirect(reverse('fitshare:index'), {
+            'notification': "User created",
+        })
+        
+    return render(request, 'fitshare/register.html', context=ctx)
 
 def create_workout_tuple(workout_name, workout_type, workout_useralias):
     workout_created_date = timezone.now()
