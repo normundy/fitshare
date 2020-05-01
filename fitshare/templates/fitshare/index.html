@@ -47,6 +47,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             {% if user.is_authenticated %}
             <input class="save_as_user_button" type="submit" value="Save"</input>
+            <span>Logged in as {{ user.username }}</span>
             {% else %}
             <input class="save_as_guest_button" type="submit" value="Save as guest"</input>
             <span>Have an account? <a href="">Login</a> or <a href="">Register</a> today</span>

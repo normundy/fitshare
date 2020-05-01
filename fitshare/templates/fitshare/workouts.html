@@ -11,7 +11,13 @@
         <div class="navigation">
           <span class="fitshare"><a href="/fitshare/">Fitshare</a></span>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <span><a href="/fitshare/workouts/">Workouts</a> | <a href="/login/">Login</a> | <a href="/register/">Register</a></span>
+          <span><a href="/fitshare/workouts/">Workouts</a> |
+          {% if user.is_authenticated %}
+          <a href="/fitshare/logout/">Logout</a> |
+          {% else %}
+          <a href="/fitshare/login/">Login</a> |
+          <a href="/fitshare/register/">Register</a></span>
+          {% endif %}
         </div>
         <div class="recent_workouts">
           <a href="/fitshare/workouts/">Recent Workouts</a>
@@ -31,9 +37,8 @@
         </div>
         {% for workout in workouts %}
         <div class="workouts_all_row">
-          <span>Guest</span>
-          <span><a href="/fitshare/view_workout/{{ workout.id }}">{{ workout.name }}</a></span>
-          <span>{{ workout.type }}</span>
+          <span>Name: <a href="/fitshare/view_workout/{{ workout.id }}">{{ workout.name }}</a></span>
+          <span>Type: {{ workout.type }}</span>
         </div>
         {% endfor %}
       </div>
