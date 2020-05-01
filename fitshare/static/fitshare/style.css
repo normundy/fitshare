@@ -151,6 +151,21 @@ html, body {
   border-color: #c83737;
 }
 
+.save_as_user_button {
+  background-color: #c83737;
+  color: white;
+
+  cursor:pointer;
+
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+
+  border-radius: 10px;
+  border-color: #c83737;
+}
+
 .view_workout_user {
   background-color: #ffe680ff;
 

@@ -25,7 +25,7 @@ class Exercise(models.Model):
     updated_date = models.DateTimeField('updated date')
 
     def __str__(self):
-        return "Name: " + self.name + " | Type: " + self.type + " | Target: " + self.target
+        return "Name: " + self.name
 
 class Workout_e(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

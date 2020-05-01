@@ -45,8 +45,12 @@
             </select>
             <input type="button" class="add_exercise_button" id="add_exercise_button" name="add_exercise_button" value="Add exercise" onclick="addExercise()"></button></input>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {% if user.is_authenticated %}
+            <input class="save_as_user_button" type="submit" value="Save"</input>
+            {% else %}
             <input class="save_as_guest_button" type="submit" value="Save as guest"</input>
             <span>Have an account? <a href="">Login</a> or <a href="">Register</a> today</span>
+            {% endif %}
           </div>
           <div class="create_workout2" id="exercise0">
             <input type="text" id="exercise_name0" name="exercise_name0"placeholder="Exercise name"></input>

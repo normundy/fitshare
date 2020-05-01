@@ -19,8 +19,8 @@ def index(request):
         try:
             workout_name = request.POST['workout_name']
             workout_type = request.POST['workout_type']
-            workout_useralias = "Guest"
-            workout = create_workout_tuple(workout_name, workout_type, workout_useralias)
+            workout = create_workout_tuple(workout_name, workout_type)
+
             exercise_name_list = []
             reps_list = []
             sets_list = []
@@ -37,7 +37,7 @@ def index(request):
             i = 0
             j = len(exercise_name_list)
             while (i < j):
-                create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout)
+                create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout, request.user)
                 i = i + 1
         except (KeyError):
             return render(request, 'fitshare/index.html', {
@@ -66,10 +66,6 @@ def view_workout(request, workout_id):
 
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
-
-    print(recent_workouts)
-    print(workout_e)
-    print(workout)
 
     ctx = {
         'recent_workouts': recent_workouts,
@@ -128,22 +124,22 @@ def register(request):
         return HttpResponseRedirect(reverse('fitshare:index'), {
             'notification': "User created",
         })
-        
+
     return render(request, 'fitshare/register.html', context=ctx)
 
-def create_workout_tuple(workout_name, workout_type, workout_useralias):
+def create_workout_tuple(workout_name, workout_type):
     workout_created_date = timezone.now()
     workout_updated_date = timezone.now()
-    workout = Workout(name=workout_name, type=workout_type, user_alias=workout_useralias, \
+    workout = Workout(name=workout_name, type=workout_type, \
         created_date=workout_created_date, updated_date=workout_updated_date)
     workout.save()
     return workout
 
-def create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout):
-    guest_user = User.objects.get(username='Guest') # Temporary guest user for testing purposes
+def create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout, user):
+    #user = User.objects.get(username='Guest') # Temporary guest user for testing purposes
     exercise = Exercise(name=exercise_name_list[i], created_date=timezone.now(), updated_date=timezone.now())
     exercise.save()
-    workout_e = Workout_e(user=guest_user, workout_id=workout, \
+    workout_e = Workout_e(user=user, workout_id=workout, \
         exercise_id=exercise, sets=sets_list[i], reps=reps_list[i], time=times_list[i])
     workout_e.save()
     return workout_e
