@@ -3,9 +3,9 @@ from django.db import models
 import datetime
 
 class Workout(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     type = models.CharField(max_length=200, null=True)
-    user_alias = models.CharField(max_length=200, null=True)
     created_date = models.DateTimeField('created date')
     updated_date = models.DateTimeField('updated date')
 
@@ -13,6 +13,7 @@ class Workout(models.Model):
         return ("Name: " + self.name + " | Type: " + self.type)
 
 class Exercise(models.Model):
+    #user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     type = models.CharField(max_length=200, null=True)
     target = models.CharField(max_length=200, null=True)

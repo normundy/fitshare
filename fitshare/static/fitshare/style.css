@@ -245,3 +245,15 @@ html, body {
   border-color: black;
   border-width: thin;
 }
+
+.user_profile1 {
+  flex: 25%;
+  height: 100%;
+  background-color: #ffe680ff
+}
+
+.user_profile2 {
+  flex: 50%;
+  height: 100%;
+  background-color: #f4d7d7;
+}

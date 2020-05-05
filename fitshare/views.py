@@ -19,7 +19,8 @@ def index(request):
         try:
             workout_name = request.POST['workout_name']
             workout_type = request.POST['workout_type']
-            workout = create_workout_tuple(workout_name, workout_type)
+            user = request.user
+            workout = create_workout_tuple(workout_name, workout_type, user)
 
             exercise_name_list = []
             reps_list = []
@@ -129,19 +130,48 @@ def register(request):
 
     return render(request, 'fitshare/register.html', context=ctx)
 
-def create_workout_tuple(workout_name, workout_type):
+def user_profile(request, user_id):
+    # Get the 10 most recent workouts
+    recent_workouts = Workout.objects.order_by('-updated_date')[:10]
+
+    user = User.objects.get(id=user_id)
+
+    ctx = {
+        'recent_workouts': recent_workouts,
+        'user': user,
+    }
+
+    return render(request, 'fitshare/user.html', context=ctx)
+
+def create_workout_tuple(workout_name, workout_type, user):
     workout_created_date = timezone.now()
     workout_updated_date = timezone.now()
-    workout = Workout(name=workout_name, type=workout_type, \
-        created_date=workout_created_date, updated_date=workout_updated_date)
+
+    if user.is_authenticated:
+        workout = Workout(user=user, name=workout_name, type=workout_type, \
+            created_date=workout_created_date, updated_date=workout_updated_date)
+    else:
+        anon_user = User.objects.get(username='Anonymous')
+        workout = Workout(user=anon_user, name=workout_name, type=workout_type, \
+            created_date=workout_created_date, updated_date=workout_updated_date)
+
     workout.save()
+
     return workout
 
 def create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout, user):
     #user = User.objects.get(username='Guest') # Temporary guest user for testing purposes
+
     exercise = Exercise(name=exercise_name_list[i], created_date=timezone.now(), updated_date=timezone.now())
     exercise.save()
-    workout_e = Workout_e(user=user, workout_id=workout, \
-        exercise_id=exercise, sets=sets_list[i], reps=reps_list[i], time=times_list[i])
+
+    if user.is_authenticated:
+        workout_e = Workout_e(user=user, workout_id=workout, \
+            exercise_id=exercise, sets=sets_list[i], reps=reps_list[i], time=times_list[i])
+    else:
+        anon_user = User.objects.get(username='Anonymous')
+        workout_e = Workout_e(user=anon_user, workout_id=workout, \
+            exercise_id=exercise, sets=sets_list[i], reps=reps_list[i], time=times_list[i])
     workout_e.save()
+
     return workout_e
