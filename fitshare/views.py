@@ -17,11 +17,13 @@ def index(request):
     # Handle workout form submission
     if request.method == 'POST':
         try:
+            # Create Workout
             workout_name = request.POST['workout_name']
             workout_type = request.POST['workout_type']
             user = request.user
             workout = create_workout_tuple(workout_name, workout_type, user)
 
+            # Create Workout_e
             exercise_name_list = []
             reps_list = []
             sets_list = []
@@ -54,20 +56,18 @@ def index(request):
 
     return render(request, 'fitshare/index.html', context=ctx)
 
-def create_workout(request):
-    exercises = Exercise.objects.values('name').order_by('name')
-    exercises_context = {
-        'exercises_context': exercises,
-    }
-    return render(request, 'fitshare/create_workout.html', context=exercises_context)
-
 def view_workout(request, workout_id):
-    workout_e = Workout_e.objects.filter(workout_id=workout_id).select_related()
-    workout = Workout.objects.get(id=workout_id)
-    workout_user = workout_e[0].user
-
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
+
+    # Get this workout
+    workout = Workout.objects.get(id=workout_id)
+
+    # Get all exercises for this workout
+    workout_e = Workout_e.objects.filter(workout_id=workout_id).select_related()
+
+    # Get the user that created this workout
+    workout_user = workout_e[0].user
 
     ctx = {
         'recent_workouts': recent_workouts,
@@ -79,10 +79,11 @@ def view_workout(request, workout_id):
     return render(request, 'fitshare/view_workout.html', context=ctx)
 
 def workouts(request):
-    workouts = Workout.objects.all().order_by('-updated_date')
-
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
+
+    # Get all workouts
+    workouts = Workout.objects.all().order_by('-updated_date')
 
     ctx = {
         'workouts': workouts,
@@ -94,10 +95,10 @@ def workouts(request):
 class FitshareLogin(auth_views.LoginView):
 
     def get_context_data(self, **kwargs):
-        ctx = super().get_context_data(**kwargs)
-
         # Get the 10 most recent workouts
         recent_workouts = Workout.objects.order_by('-updated_date')[:10]
+
+        ctx = super().get_context_data(**kwargs)
 
         ctx.update({
             'recent_workouts': recent_workouts,
@@ -108,10 +109,6 @@ class FitshareLogin(auth_views.LoginView):
 def register(request):
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
-
-    ctx = {
-        'recent_workouts': recent_workouts,
-    }
 
     if request.method == 'POST':
         try:
@@ -127,16 +124,23 @@ def register(request):
             'notification': "User created",
         })
 
+    ctx = {
+        'recent_workouts': recent_workouts,
+    }
+
     return render(request, 'fitshare/register.html', context=ctx)
 
 def user_profile(request, user_id):
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
+    # Get the user by id
     user = User.objects.get(id=user_id)
 
+    # Get the workouts this user created
     workouts = Workout.objects.filter(user=user).select_related()
 
+    # For each workout, get all exercises
     for workout in workouts:
         workout.exercises = Workout_e.objects.filter(workout_id=workout.id)
 
