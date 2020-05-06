@@ -92,7 +92,6 @@ def workouts(request):
     return render(request, 'fitshare/workouts.html', context=ctx)
 
 class FitshareLogin(auth_views.LoginView):
-    #template_name = 'login.html'
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
@@ -136,9 +135,15 @@ def user_profile(request, user_id):
 
     user = User.objects.get(id=user_id)
 
+    workouts = Workout.objects.filter(user=user).select_related()
+
+    for workout in workouts:
+        workout.exercises = Workout_e.objects.filter(workout_id=workout.id)
+
     ctx = {
         'recent_workouts': recent_workouts,
         'user': user,
+        'workouts': workouts,
     }
 
     return render(request, 'fitshare/user.html', context=ctx)
@@ -160,8 +165,6 @@ def create_workout_tuple(workout_name, workout_type, user):
     return workout
 
 def create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout, user):
-    #user = User.objects.get(username='Guest') # Temporary guest user for testing purposes
-
     exercise = Exercise(name=exercise_name_list[i], created_date=timezone.now(), updated_date=timezone.now())
     exercise.save()
 
