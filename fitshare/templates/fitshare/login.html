@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    {% load static %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'fitshare/style.css' %}">
-  </head>
-  <body>
-    <div class="row">
-      <div class="column1">
-        <div class="navigation">
-          <span class="fitshare"><a href="/fitshare/">Fitshare</a></span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <span><a href="/fitshare/workouts/">Workouts</a> | <a href="/login/">Login</a> | <a href="/register/">Register</a></span>
-        </div>
-        <div class="recent_workouts">
-          <a href="/fitshare/workouts/">Recent Workouts</a>
-        </div>
-        {% for workout in recent_workouts %}
-        <div class="workout">
-          <a href="/fitshare/view_workout/{{ workout.id }}">- {{ workout.name }}</a>
-        </div>
-        {% endfor %}
-        <div class="footer">
-          <span><a href="/about/">About</a> | <a href="/contact/">Contact</a></span>
-        </div>
-      </div>
-      <div class="column2">
-        <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-        </form>
-      </div>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="column2">
+  <form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+  </form>
+</div>
+
+{% endblock content %}

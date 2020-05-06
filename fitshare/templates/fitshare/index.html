@@ -1,84 +1,55 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    {% load static %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'fitshare/style.css' %}">
-  </head>
-  <body>
-    <div class="row">
-      <div class="column1">
-        <div class="navigation">
-          <span class="fitshare"><a href="/fitshare/">Fitshare</a></span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <span><a href="/fitshare/workouts/">Workouts</a> |
-          {% if user.is_authenticated %}
-          <a href="/fitshare/logout/">Logout</a> |
-          {% else %}
-          <a href="/fitshare/login/">Login</a> |
-          <a href="/fitshare/register/">Register</a></span>
-          {% endif %}
-        </div>
-        <div class="recent_workouts">
-          <a href="/fitshare/workouts/">Recent Workouts</a>
-        </div>
-        {% for workout in recent_workouts %}
-        <div class="workout">
-          <a href="/fitshare/view_workout/{{ workout.id }}">- {{ workout.name }}</a>
-        </div>
-        {% endfor %}
-        <div class="footer">
-          <span><a href="/about/">About</a> | <a href="/contact/">Contact</a></span>
-        </div>
-      </div>
-      <div class="column2">
-        <form action="{% url 'fitshare:index' %}" method="post">
-          {% csrf_token %}
-          <div class="create_workout1">
-            <input type="text" id="workout_name" name="workout_name" placeholder="Workout name" value=""></input>
-            <select id="workout_type" name="workout_type">
-              <option value="" disabled selected>Workout type</option>
-              <option value="bodyweight">Bodyweight</option>
-              <option value="crossfit">Crossfit</option>
-              <option value="mixed">Mixed</option>
-              <option value="weighted">Weights</option>
-            </select>
-            <input type="button" class="add_exercise_button" id="add_exercise_button" name="add_exercise_button" value="Add exercise" onclick="addExercise()"></button></input>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {% if user.is_authenticated %}
-            <input class="save_as_user_button" type="submit" value="Save"</input>
-            <span>Logged in as {{ user.username }}</span>
-            {% else %}
-            <input class="save_as_guest_button" type="submit" value="Save as guest"</input>
-            <span>Have an account? <a href="/fitshare/login">Login</a> or <a href="/fitshare/register/">Register</a> today</span>
-            {% endif %}
-          </div>
-          <div class="create_workout2" id="exercise0">
-            <input type="text" id="exercise_name0" name="exercise_name0"placeholder="Exercise name"></input>
-            <input type="text" id="sets0" name="sets0" placeholder="Sets"></input>
-            <input type="text" id="reps0" name="reps0" placeholder="Reps"></input>
-            <input type="text" id="time0" name="time0" placeholder="Time"></input>
-          </div>
-        </form>
-      </div>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="column2">
+  <form action="{% url 'fitshare:index' %}" method="post">
+    {% csrf_token %}
+    <div class="create_workout1">
+      <input type="text" id="workout_name" name="workout_name" placeholder="Workout name" value=""></input>
+      <select id="workout_type" name="workout_type">
+        <option value="" disabled selected>Workout type</option>
+        <option value="bodyweight">Bodyweight</option>
+        <option value="crossfit">Crossfit</option>
+        <option value="mixed">Mixed</option>
+        <option value="weighted">Weights</option>
+      </select>
+      <input type="button" class="add_exercise_button" id="add_exercise_button" name="add_exercise_button" value="Add exercise" onclick="addExercise()"></button></input>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {% if user.is_authenticated %}
+      <input class="save_as_user_button" type="submit" value="Save"</input>
+      <span>Logged in as {{ user.username }}</span>
+      {% else %}
+      <input class="save_as_guest_button" type="submit" value="Save as guest"</input>
+      <span>Have an account? <a href="/fitshare/login">Login</a> or <a href="/fitshare/register/">Register</a> today</span>
+      {% endif %}
     </div>
-    <script>
-      var workout_e_count = 1;
+    <div class="create_workout2" id="exercise0">
+      <input type="text" id="exercise_name0" name="exercise_name0"placeholder="Exercise name"></input>
+      <input type="text" id="sets0" name="sets0" placeholder="Sets"></input>
+      <input type="text" id="reps0" name="reps0" placeholder="Reps"></input>
+      <input type="text" id="time0" name="time0" placeholder="Time"></input>
+    </div>
+  </form>
+</div>
+</div>
+<script>
+var workout_e_count = 1;
 
-      function addExercise() {
-        var previous_exercise = "exercise" + (workout_e_count - 1).toString();
-        var exercise = `
-        <div class="create_workout2" id="exercise${workout_e_count}">
-          <input type="text" id="exercise_name${workout_e_count}" name="exercise_name${workout_e_count}" placeholder="Exercise name"></input>
-          <input type="text" id="sets${workout_e_count}" name="sets${workout_e_count}" placeholder="Sets"></input>
-          <input type="text" id="reps${workout_e_count}" name="reps${workout_e_count}" placeholder="Reps"></input>
-          <input type="text" id="time${workout_e_count}" name="time${workout_e_count}" placeholder="Time"></input>
-        </div>
-        `;
+function addExercise() {
+  var previous_exercise = "exercise" + (workout_e_count - 1).toString();
+  var exercise = `
+  <div class="create_workout2" id="exercise${workout_e_count}">
+    <input type="text" id="exercise_name${workout_e_count}" name="exercise_name${workout_e_count}" placeholder="Exercise name"></input>
+    <input type="text" id="sets${workout_e_count}" name="sets${workout_e_count}" placeholder="Sets"></input>
+    <input type="text" id="reps${workout_e_count}" name="reps${workout_e_count}" placeholder="Reps"></input>
+    <input type="text" id="time${workout_e_count}" name="time${workout_e_count}" placeholder="Time"></input>
+  </div>
+  `;
 
-        document.getElementById(previous_exercise).insertAdjacentHTML('afterend', exercise);
-        workout_e_count = workout_e_count + 1;
-      }
-    </script>
-  </body>
-</html>
+  document.getElementById(previous_exercise).insertAdjacentHTML('afterend', exercise);
+  workout_e_count = workout_e_count + 1;
+}
+</script>
+
+{% endblock content %}
