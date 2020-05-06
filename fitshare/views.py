@@ -64,7 +64,7 @@ def create_workout(request):
 def view_workout(request, workout_id):
     workout_e = Workout_e.objects.filter(workout_id=workout_id).select_related()
     workout = Workout.objects.get(id=workout_id)
-    workout_user = workout_e[0].user.username
+    workout_user = workout_e[0].user
 
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]

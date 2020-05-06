@@ -1,0 +1,1136 @@
+- model: fitshare.exercise
+  pk: 1
+  fields:
+    name: Bicep curl
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:31:59.347228+00:00
+    updated_date: 2020-05-06 18:31:59.347239+00:00
+- model: fitshare.exercise
+  pk: 2
+  fields:
+    name: Tricep extension
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:31:59.351581+00:00
+    updated_date: 2020-05-06 18:31:59.351593+00:00
+- model: fitshare.exercise
+  pk: 3
+  fields:
+    name: Deadlift
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:31:59.354018+00:00
+    updated_date: 2020-05-06 18:31:59.354028+00:00
+- model: fitshare.exercise
+  pk: 4
+  fields:
+    name: Pushup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:32:39.020719+00:00
+    updated_date: 2020-05-06 18:32:39.020736+00:00
+- model: fitshare.exercise
+  pk: 5
+  fields:
+    name: Situp
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:32:39.024680+00:00
+    updated_date: 2020-05-06 18:32:39.024691+00:00
+- model: fitshare.exercise
+  pk: 6
+  fields:
+    name: Pullup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:32:39.027109+00:00
+    updated_date: 2020-05-06 18:32:39.027119+00:00
+- model: fitshare.exercise
+  pk: 7
+  fields:
+    name: Standard pushup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:45:06.356455+00:00
+    updated_date: 2020-05-06 18:45:06.356466+00:00
+- model: fitshare.exercise
+  pk: 8
+  fields:
+    name: Diamond pushup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:45:06.359932+00:00
+    updated_date: 2020-05-06 18:45:06.359943+00:00
+- model: fitshare.exercise
+  pk: 9
+  fields:
+    name: Wide pushup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:45:06.362730+00:00
+    updated_date: 2020-05-06 18:45:06.362741+00:00
+- model: fitshare.exercise
+  pk: 10
+  fields:
+    name: Pushup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:46:13.617643+00:00
+    updated_date: 2020-05-06 18:46:13.617654+00:00
+- model: fitshare.exercise
+  pk: 11
+  fields:
+    name: Neutral grip pullup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:46:13.621195+00:00
+    updated_date: 2020-05-06 18:46:13.621205+00:00
+- model: fitshare.exercise
+  pk: 12
+  fields:
+    name: Situp
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:46:13.623347+00:00
+    updated_date: 2020-05-06 18:46:13.623356+00:00
+- model: fitshare.exercise
+  pk: 13
+  fields:
+    name: Side lying leg raise
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:46:13.625389+00:00
+    updated_date: 2020-05-06 18:46:13.625398+00:00
+- model: fitshare.exercise
+  pk: 14
+  fields:
+    name: Front lying leg raise
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:46:13.627440+00:00
+    updated_date: 2020-05-06 18:46:13.627449+00:00
+- model: fitshare.exercise
+  pk: 15
+  fields:
+    name: Boxers skip
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:46:46.053974+00:00
+    updated_date: 2020-05-06 18:46:46.053987+00:00
+- model: fitshare.exercise
+  pk: 16
+  fields:
+    name: Pushup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:47:20.948334+00:00
+    updated_date: 2020-05-06 18:47:20.948345+00:00
+- model: fitshare.exercise
+  pk: 17
+  fields:
+    name: Bicep curl
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:47:20.951745+00:00
+    updated_date: 2020-05-06 18:47:20.951756+00:00
+- model: fitshare.exercise
+  pk: 18
+  fields:
+    name: Bicep curl
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:47:40.777971+00:00
+    updated_date: 2020-05-06 18:47:40.777981+00:00
+- model: fitshare.exercise
+  pk: 19
+  fields:
+    name: Tricep extension
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:47:40.781007+00:00
+    updated_date: 2020-05-06 18:47:40.781019+00:00
+- model: fitshare.exercise
+  pk: 20
+  fields:
+    name: Pushup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:48:03.369907+00:00
+    updated_date: 2020-05-06 18:48:03.369918+00:00
+- model: fitshare.exercise
+  pk: 21
+  fields:
+    name: Plank
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:48:03.373660+00:00
+    updated_date: 2020-05-06 18:48:03.373671+00:00
+- model: fitshare.exercise
+  pk: 22
+  fields:
+    name: Lunge
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:48:35.726259+00:00
+    updated_date: 2020-05-06 18:48:35.726269+00:00
+- model: fitshare.exercise
+  pk: 23
+  fields:
+    name: Squat
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:48:35.729458+00:00
+    updated_date: 2020-05-06 18:48:35.729469+00:00
+- model: fitshare.exercise
+  pk: 24
+  fields:
+    name: Calf raise
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:48:35.732362+00:00
+    updated_date: 2020-05-06 18:48:35.732372+00:00
+- model: fitshare.exercise
+  pk: 25
+  fields:
+    name: Pushup
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:48:57.672780+00:00
+    updated_date: 2020-05-06 18:48:57.672792+00:00
+- model: fitshare.exercise
+  pk: 26
+  fields:
+    name: Bicep curl
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:48:57.676541+00:00
+    updated_date: 2020-05-06 18:48:57.676551+00:00
+- model: fitshare.exercise
+  pk: 27
+  fields:
+    name: Russian twist
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:49:22.705526+00:00
+    updated_date: 2020-05-06 18:49:22.705537+00:00
+- model: fitshare.exercise
+  pk: 28
+  fields:
+    name: Tuckin
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:49:22.709037+00:00
+    updated_date: 2020-05-06 18:49:22.709047+00:00
+- model: fitshare.exercise
+  pk: 29
+  fields:
+    name: V up
+    type: null
+    target: null
+    utility: null
+    mechanic: null
+    force: null
+    preparation: null
+    execution: null
+    created_date: 2020-05-06 18:49:22.711088+00:00
+    updated_date: 2020-05-06 18:49:22.711096+00:00
+- model: contenttypes.contenttype
+  pk: 1
+  fields:
+    app_label: fitshare
+    model: workout
+- model: contenttypes.contenttype
+  pk: 2
+  fields:
+    app_label: fitshare
+    model: exercise
+- model: contenttypes.contenttype
+  pk: 3
+  fields:
+    app_label: fitshare
+    model: workout_e
+- model: contenttypes.contenttype
+  pk: 4
+  fields:
+    app_label: admin
+    model: logentry
+- model: contenttypes.contenttype
+  pk: 5
+  fields:
+    app_label: auth
+    model: permission
+- model: contenttypes.contenttype
+  pk: 6
+  fields:
+    app_label: auth
+    model: group
+- model: contenttypes.contenttype
+  pk: 7
+  fields:
+    app_label: auth
+    model: user
+- model: contenttypes.contenttype
+  pk: 8
+  fields:
+    app_label: contenttypes
+    model: contenttype
+- model: contenttypes.contenttype
+  pk: 9
+  fields:
+    app_label: sessions
+    model: session
+- model: sessions.session
+  pk: llpgyj1iyzt2t4gmaycru1wvotzt9x0m
+  fields:
+    session_data: MGY4MzkxYzk4NzRmMjAyYzljM2JkYWIyZGM1MzMyNzExNjI2MGRhNzp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmMDM0YzBhNjE1ZDM2ZDE5MzJiN2U4YjZjMTYwYTY0YjlkMWNhNDc0In0=
+    expire_date: 2020-05-20 18:48:16.044146+00:00
+- model: auth.permission
+  pk: 1
+  fields:
+    name: Can add workout
+    content_type: 1
+    codename: add_workout
+- model: auth.permission
+  pk: 2
+  fields:
+    name: Can change workout
+    content_type: 1
+    codename: change_workout
+- model: auth.permission
+  pk: 3
+  fields:
+    name: Can delete workout
+    content_type: 1
+    codename: delete_workout
+- model: auth.permission
+  pk: 4
+  fields:
+    name: Can view workout
+    content_type: 1
+    codename: view_workout
+- model: auth.permission
+  pk: 5
+  fields:
+    name: Can add exercise
+    content_type: 2
+    codename: add_exercise
+- model: auth.permission
+  pk: 6
+  fields:
+    name: Can change exercise
+    content_type: 2
+    codename: change_exercise
+- model: auth.permission
+  pk: 7
+  fields:
+    name: Can delete exercise
+    content_type: 2
+    codename: delete_exercise
+- model: auth.permission
+  pk: 8
+  fields:
+    name: Can view exercise
+    content_type: 2
+    codename: view_exercise
+- model: auth.permission
+  pk: 9
+  fields:
+    name: Can add workout_e
+    content_type: 3
+    codename: add_workout_e
+- model: auth.permission
+  pk: 10
+  fields:
+    name: Can change workout_e
+    content_type: 3
+    codename: change_workout_e
+- model: auth.permission
+  pk: 11
+  fields:
+    name: Can delete workout_e
+    content_type: 3
+    codename: delete_workout_e
+- model: auth.permission
+  pk: 12
+  fields:
+    name: Can view workout_e
+    content_type: 3
+    codename: view_workout_e
+- model: auth.permission
+  pk: 13
+  fields:
+    name: Can add log entry
+    content_type: 4
+    codename: add_logentry
+- model: auth.permission
+  pk: 14
+  fields:
+    name: Can change log entry
+    content_type: 4
+    codename: change_logentry
+- model: auth.permission
+  pk: 15
+  fields:
+    name: Can delete log entry
+    content_type: 4
+    codename: delete_logentry
+- model: auth.permission
+  pk: 16
+  fields:
+    name: Can view log entry
+    content_type: 4
+    codename: view_logentry
+- model: auth.permission
+  pk: 17
+  fields:
+    name: Can add permission
+    content_type: 5
+    codename: add_permission
+- model: auth.permission
+  pk: 18
+  fields:
+    name: Can change permission
+    content_type: 5
+    codename: change_permission
+- model: auth.permission
+  pk: 19
+  fields:
+    name: Can delete permission
+    content_type: 5
+    codename: delete_permission
+- model: auth.permission
+  pk: 20
+  fields:
+    name: Can view permission
+    content_type: 5
+    codename: view_permission
+- model: auth.permission
+  pk: 21
+  fields:
+    name: Can add group
+    content_type: 6
+    codename: add_group
+- model: auth.permission
+  pk: 22
+  fields:
+    name: Can change group
+    content_type: 6
+    codename: change_group
+- model: auth.permission
+  pk: 23
+  fields:
+    name: Can delete group
+    content_type: 6
+    codename: delete_group
+- model: auth.permission
+  pk: 24
+  fields:
+    name: Can view group
+    content_type: 6
+    codename: view_group
+- model: auth.permission
+  pk: 25
+  fields:
+    name: Can add user
+    content_type: 7
+    codename: add_user
+- model: auth.permission
+  pk: 26
+  fields:
+    name: Can change user
+    content_type: 7
+    codename: change_user
+- model: auth.permission
+  pk: 27
+  fields:
+    name: Can delete user
+    content_type: 7
+    codename: delete_user
+- model: auth.permission
+  pk: 28
+  fields:
+    name: Can view user
+    content_type: 7
+    codename: view_user
+- model: auth.permission
+  pk: 29
+  fields:
+    name: Can add content type
+    content_type: 8
+    codename: add_contenttype
+- model: auth.permission
+  pk: 30
+  fields:
+    name: Can change content type
+    content_type: 8
+    codename: change_contenttype
+- model: auth.permission
+  pk: 31
+  fields:
+    name: Can delete content type
+    content_type: 8
+    codename: delete_contenttype
+- model: auth.permission
+  pk: 32
+  fields:
+    name: Can view content type
+    content_type: 8
+    codename: view_contenttype
+- model: auth.permission
+  pk: 33
+  fields:
+    name: Can add session
+    content_type: 9
+    codename: add_session
+- model: auth.permission
+  pk: 34
+  fields:
+    name: Can change session
+    content_type: 9
+    codename: change_session
+- model: auth.permission
+  pk: 35
+  fields:
+    name: Can delete session
+    content_type: 9
+    codename: delete_session
+- model: auth.permission
+  pk: 36
+  fields:
+    name: Can view session
+    content_type: 9
+    codename: view_session
+- model: auth.user
+  pk: 1
+  fields:
+    password: pbkdf2_sha256$180000$94ejRd4OhP5l$65SMze6VGjA52Kn/x9ysYGy1Lgkqp17JPi2hVCTuoyE=
+    last_login: 2020-05-06 18:29:12.085517+00:00
+    is_superuser: true
+    username: testuser
+    first_name: ''
+    last_name: ''
+    email: admin@email.com
+    is_staff: true
+    is_active: true
+    date_joined: 2020-05-06 18:29:06.538660+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$180000$OxyyFoFQoA6f$wK9omsckWV/g8hfrhaNrpX95rj8ee1KT35etd9csxCk=
+    last_login: null
+    is_superuser: false
+    username: Anonymous
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2020-05-06 18:29:25.997054+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 3
+  fields:
+    password: pbkdf2_sha256$180000$kMZvcmeZKcKH$QOMOP+dSsvkSc5dml1dap9da6fdcbRD6XgdemXsR84I=
+    last_login: 2020-05-06 18:45:16.889535+00:00
+    is_superuser: false
+    username: normundy
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2020-05-06 18:30:05.713122+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 4
+  fields:
+    password: pbkdf2_sha256$180000$iGYxjf1apkBa$GcC9QQBR1ABhY719pbcaqhRUcy9c05cBkzAVAVQmle0=
+    last_login: 2020-05-06 18:48:16.041561+00:00
+    is_superuser: false
+    username: siedes
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2020-05-06 18:30:19.565314+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 5
+  fields:
+    password: pbkdf2_sha256$180000$4mnxXWITKbF1$ceA125GLPcwt2A1IZYkTG4LZXnmX3iQIg+YJzIIhMYc=
+    last_login: 2020-05-06 18:47:02.291151+00:00
+    is_superuser: false
+    username: Bob
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2020-05-06 18:30:32.228779+00:00
+    groups: []
+    user_permissions: []
+- model: admin.logentry
+  pk: 1
+  fields:
+    action_time: 2020-05-06 18:29:26.188770+00:00
+    user: 1
+    content_type: 7
+    object_id: '2'
+    object_repr: Anonymous
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 2
+  fields:
+    action_time: 2020-05-06 18:30:05.900806+00:00
+    user: 1
+    content_type: 7
+    object_id: '3'
+    object_repr: normundy
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 3
+  fields:
+    action_time: 2020-05-06 18:30:19.747949+00:00
+    user: 1
+    content_type: 7
+    object_id: '4'
+    object_repr: siedes
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: admin.logentry
+  pk: 4
+  fields:
+    action_time: 2020-05-06 18:30:32.413798+00:00
+    user: 1
+    content_type: 7
+    object_id: '5'
+    object_repr: Bob
+    action_flag: 1
+    change_message: '[{"added": {}}]'
+- model: fitshare.workout_e
+  pk: 1
+  fields:
+    user: 1
+    workout_id: 1
+    exercise_id: 1
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 2
+  fields:
+    user: 1
+    workout_id: 1
+    exercise_id: 2
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 3
+  fields:
+    user: 1
+    workout_id: 1
+    exercise_id: 3
+    desc: null
+    sets: 5
+    reps: 5
+    time: ''
+- model: fitshare.workout_e
+  pk: 4
+  fields:
+    user: 1
+    workout_id: 2
+    exercise_id: 4
+    desc: null
+    sets: 10
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 5
+  fields:
+    user: 1
+    workout_id: 2
+    exercise_id: 5
+    desc: null
+    sets: 10
+    reps: 20
+    time: ''
+- model: fitshare.workout_e
+  pk: 6
+  fields:
+    user: 1
+    workout_id: 2
+    exercise_id: 6
+    desc: null
+    sets: 10
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 7
+  fields:
+    user: 1
+    workout_id: 3
+    exercise_id: 7
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 8
+  fields:
+    user: 1
+    workout_id: 3
+    exercise_id: 8
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 9
+  fields:
+    user: 1
+    workout_id: 3
+    exercise_id: 9
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 10
+  fields:
+    user: 3
+    workout_id: 4
+    exercise_id: 10
+    desc: null
+    sets: 10
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 11
+  fields:
+    user: 3
+    workout_id: 4
+    exercise_id: 11
+    desc: null
+    sets: 5
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 12
+  fields:
+    user: 3
+    workout_id: 4
+    exercise_id: 12
+    desc: null
+    sets: 10
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 13
+  fields:
+    user: 3
+    workout_id: 4
+    exercise_id: 13
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 14
+  fields:
+    user: 3
+    workout_id: 4
+    exercise_id: 14
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 15
+  fields:
+    user: 3
+    workout_id: 5
+    exercise_id: 15
+    desc: null
+    sets: 5
+    reps: 1000
+    time: ''
+- model: fitshare.workout_e
+  pk: 16
+  fields:
+    user: 5
+    workout_id: 6
+    exercise_id: 16
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 17
+  fields:
+    user: 5
+    workout_id: 6
+    exercise_id: 17
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 18
+  fields:
+    user: 5
+    workout_id: 7
+    exercise_id: 18
+    desc: null
+    sets: 5
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 19
+  fields:
+    user: 5
+    workout_id: 7
+    exercise_id: 19
+    desc: null
+    sets: 5
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 20
+  fields:
+    user: 5
+    workout_id: 8
+    exercise_id: 20
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 21
+  fields:
+    user: 5
+    workout_id: 8
+    exercise_id: 21
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 22
+  fields:
+    user: 4
+    workout_id: 9
+    exercise_id: 22
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 23
+  fields:
+    user: 4
+    workout_id: 9
+    exercise_id: 23
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 24
+  fields:
+    user: 4
+    workout_id: 9
+    exercise_id: 24
+    desc: null
+    sets: 5
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 25
+  fields:
+    user: 4
+    workout_id: 10
+    exercise_id: 25
+    desc: null
+    sets: 5
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 26
+  fields:
+    user: 4
+    workout_id: 10
+    exercise_id: 26
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 27
+  fields:
+    user: 4
+    workout_id: 11
+    exercise_id: 27
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 28
+  fields:
+    user: 4
+    workout_id: 11
+    exercise_id: 28
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout_e
+  pk: 29
+  fields:
+    user: 4
+    workout_id: 11
+    exercise_id: 29
+    desc: null
+    sets: 3
+    reps: 10
+    time: ''
+- model: fitshare.workout
+  pk: 1
+  fields:
+    user: 1
+    name: testuser's workout
+    type: weighted
+    created_date: 2020-05-06 18:31:59.318423+00:00
+    updated_date: 2020-05-06 18:31:59.318434+00:00
+- model: fitshare.workout
+  pk: 2
+  fields:
+    user: 1
+    name: testuser's calisthenics workout
+    type: bodyweight
+    created_date: 2020-05-06 18:32:38.994381+00:00
+    updated_date: 2020-05-06 18:32:38.994392+00:00
+- model: fitshare.workout
+  pk: 3
+  fields:
+    user: 1
+    name: Pushup workout
+    type: bodyweight
+    created_date: 2020-05-06 18:45:06.330368+00:00
+    updated_date: 2020-05-06 18:45:06.330378+00:00
+- model: fitshare.workout
+  pk: 4
+  fields:
+    user: 3
+    name: normundy's workout
+    type: bodyweight
+    created_date: 2020-05-06 18:46:13.591140+00:00
+    updated_date: 2020-05-06 18:46:13.591151+00:00
+- model: fitshare.workout
+  pk: 5
+  fields:
+    user: 3
+    name: normundy's jumpe rope workout
+    type: bodyweight
+    created_date: 2020-05-06 18:46:46.026755+00:00
+    updated_date: 2020-05-06 18:46:46.026767+00:00
+- model: fitshare.workout
+  pk: 6
+  fields:
+    user: 5
+    name: Bob's workout
+    type: mixed
+    created_date: 2020-05-06 18:47:20.921081+00:00
+    updated_date: 2020-05-06 18:47:20.921092+00:00
+- model: fitshare.workout
+  pk: 7
+  fields:
+    user: 5
+    name: Bob's workout2
+    type: weighted
+    created_date: 2020-05-06 18:47:40.751137+00:00
+    updated_date: 2020-05-06 18:47:40.751153+00:00
+- model: fitshare.workout
+  pk: 8
+  fields:
+    user: 5
+    name: Bob's workout3
+    type: bodyweight
+    created_date: 2020-05-06 18:48:03.343875+00:00
+    updated_date: 2020-05-06 18:48:03.343890+00:00
+- model: fitshare.workout
+  pk: 9
+  fields:
+    user: 4
+    name: siede's workout
+    type: bodyweight
+    created_date: 2020-05-06 18:48:35.698168+00:00
+    updated_date: 2020-05-06 18:48:35.698179+00:00
+- model: fitshare.workout
+  pk: 10
+  fields:
+    user: 4
+    name: siede's workout2
+    type: mixed
+    created_date: 2020-05-06 18:48:57.647696+00:00
+    updated_date: 2020-05-06 18:48:57.647707+00:00
+- model: fitshare.workout
+  pk: 11
+  fields:
+    user: 4
+    name: Core workout
+    type: bodyweight
+    created_date: 2020-05-06 18:49:22.678321+00:00
+    updated_date: 2020-05-06 18:49:22.678333+00:00
