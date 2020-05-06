@@ -169,16 +169,19 @@ def create_workout_tuple(workout_name, workout_type, user):
     return workout
 
 def create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout, user):
-    exercise = Exercise(name=exercise_name_list[i], created_date=timezone.now(), updated_date=timezone.now())
-    exercise.save()
+
 
     if user.is_authenticated:
+        exercise = Exercise(user=user, name=exercise_name_list[i], created_date=timezone.now(), updated_date=timezone.now())
         workout_e = Workout_e(user=user, workout_id=workout, \
             exercise_id=exercise, sets=sets_list[i], reps=reps_list[i], time=times_list[i])
     else:
         anon_user = User.objects.get(username='Anonymous')
+        exercise = Exercise(user=anon_user, name=exercise_name_list[i], created_date=timezone.now(), updated_date=timezone.now())
         workout_e = Workout_e(user=anon_user, workout_id=workout, \
             exercise_id=exercise, sets=sets_list[i], reps=reps_list[i], time=times_list[i])
+
+    exercise.save()
     workout_e.save()
 
     return workout_e
