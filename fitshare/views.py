@@ -2,11 +2,12 @@ from django.http import HttpResponseRedirect
 from django.views import generic
 from django.views import View
 from django.utils import timezone
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 from .models import Workout_e, Workout, Exercise
 
@@ -117,21 +118,17 @@ def register(request):
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
     if request.method == 'POST':
-        try:
-            username = request.POST['username']
-            password = request.POST['password']
-            user = User.objects.create_user(username=username, password=password)
-            user.save()
-        except (KeyError):
-            return render(request, 'fitshare/register', {
-                'notification': "Error creating user",
-            })
-        return HttpResponseRedirect(reverse('fitshare:index'), {
-            'notification': "User created",
-        })
+        f = UserCreationForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.success(request, 'Registered succesfully')
+            return redirect(reverse('fitshare:index'))
+    else:
+        f = UserCreationForm()
 
     ctx = {
         'recent_workouts': recent_workouts,
+        'form': f,
     }
 
     return render(request, 'fitshare/register.html', context=ctx)
