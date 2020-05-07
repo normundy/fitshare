@@ -32,10 +32,16 @@ def index(request):
                 if 'exercise_name' in k:
                     exercise_name_list.append(v)
                 elif 'reps' in k:
+                    if v == '':
+                        v = 0
                     reps_list.append(v)
                 elif 'sets' in k:
+                    if v == '':
+                        v = 0
                     sets_list.append(v)
                 elif 'time' in k:
+                    if v == '':
+                        v = 0
                     times_list.append(v)
             i = 0
             j = len(exercise_name_list)
@@ -169,8 +175,6 @@ def create_workout_tuple(workout_name, workout_type, user):
     return workout
 
 def create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout, user):
-
-
     if user.is_authenticated:
         exercise = Exercise(user=user, name=exercise_name_list[i], created_date=timezone.now(), updated_date=timezone.now())
         workout_e = Workout_e(user=user, workout_id=workout, \
