@@ -257,3 +257,7 @@ html, body {
   height: 100%;
   background-color: #f4d7d7;
 }
+
+.helptext {
+  display: none;
+}
