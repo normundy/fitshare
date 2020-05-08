@@ -249,7 +249,10 @@ html, body {
 .user_profile1 {
   flex: 25%;
   height: 100%;
-  background-color: #ffe680ff
+  background-color: #ffe680ff;
+
+  text-align: center;
+  font-size: 24px;
 }
 
 .user_profile2 {

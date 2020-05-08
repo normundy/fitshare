@@ -31,7 +31,6 @@
     </div>
   </form>
 </div>
-</div>
 <script>
 var workout_e_count = 1;
 
@@ -55,6 +54,7 @@ function deleteExercise(btn) {
   if (workout_e_count == 1) {
     return;
   }
+
   ((btn.parentNode).parentNode).removeChild(btn.parentNode);
   workout_e_count = workout_e_count - 1;
 }
