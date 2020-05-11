@@ -12,56 +12,20 @@ from django.contrib import messages
 from .models import Workout_e, Workout, Exercise
 
 def index(request):
+    template_name = 'fitshare/index.html'
+
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
     # Handle workout form submission
     if request.method == 'POST':
-        try:
-            # Create Workout
-            workout_name = request.POST['workout_name']
-            workout_type = request.POST['workout_type']
-            user = request.user
-            workout = create_workout_tuple(workout_name, workout_type, user)
-
-            # Create Workout_e
-            exercise_name_list = []
-            reps_list = []
-            sets_list = []
-            times_list = []
-            for k, v in request.POST.items():
-                if 'exercise_name' in k:
-                    exercise_name_list.append(v)
-                elif 'reps' in k:
-                    if v == '':
-                        v = 0
-                    reps_list.append(v)
-                elif 'sets' in k:
-                    if v == '':
-                        v = 0
-                    sets_list.append(v)
-                elif 'time' in k:
-                    if v == '':
-                        v = 0
-                    times_list.append(v)
-            i = 0
-            j = len(exercise_name_list)
-            while (i < j):
-                create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout, request.user)
-                i = i + 1
-        except (KeyError):
-            return render(request, 'fitshare/index.html', {
-                'notification': "Error creating workout",
-            })
-        return HttpResponseRedirect(reverse('fitshare:index'), {
-            'notification': "Workout created",
-        })
+        return create_workout(request)
 
     ctx = {
         'recent_workouts': recent_workouts,
     }
 
-    return render(request, 'fitshare/index.html', context=ctx)
+    return render(request, template_name, context=ctx)
 
 def view_workout(request, workout_id):
     # Get the 10 most recent workouts
@@ -186,3 +150,58 @@ def create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list,
     workout_e.save()
 
     return workout_e
+
+def create_workout(request):
+    template_name = 'fitshare/index.html'
+
+    # Get the 10 most recent workouts
+    recent_workouts = Workout.objects.order_by('-updated_date')[:10]
+
+    ctx = {
+        'recent_workouts': recent_workouts,
+    }
+
+    try:
+        # Create Workout
+        workout_name = request.POST['workout_name']
+        workout_type = request.POST['workout_type']
+        user = request.user
+        workout = create_workout_tuple(workout_name, workout_type, user)
+
+        # Create Workout_e
+        exercise_name_list = []
+        reps_list = []
+        sets_list = []
+        times_list = []
+        for k, v in request.POST.items():
+            if 'exercise_name' in k:
+                exercise_name_list.append(v)
+            elif 'reps' in k:
+                if v == '':
+                    v = 0
+                reps_list.append(v)
+            elif 'sets' in k:
+                if v == '':
+                    v = 0
+                sets_list.append(v)
+            elif 'time' in k:
+                if v == '':
+                    v = 0
+                times_list.append(v)
+        i = 0
+        j = len(exercise_name_list)
+        while (i < j):
+            create_workout_e_tuple(exercise_name_list, reps_list, sets_list, times_list, i, workout, request.user)
+            i = i + 1
+
+    except (KeyError):
+        ctx.update({
+            'error_message': 'Error creating workout',
+        })
+        return render(request, template_name, context=ctx)
+
+    ctx.update({
+        'error_message': 'Workout created',
+    })
+
+    return render(request, template_name, context=ctx)

@@ -30,6 +30,7 @@
       <input type="button" id="delete_exercise_button" name="delete_exercise_button" value="Delete exercise" onclick="deleteExercise(this)"></button>
     </div>
   </form>
+  {% if error_message %}<p>{{ error_message }}</p>{% endif %}
 </div>
 <script>
 var workout_e_count = 1;
