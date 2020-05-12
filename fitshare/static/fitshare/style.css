@@ -199,6 +199,8 @@ html, body {
   border-style: solid;
   border-color: black;
   border-width: thin;
+
+  text-align: center;
 }
 
 .view_workout_one2 {
@@ -212,6 +214,8 @@ html, body {
   border-style: solid;
   border-color: black;
   border-width: thin;
+
+  text-align: center;
 }
 
 .workouts_all {
@@ -231,6 +235,8 @@ html, body {
   border-style: solid;
   border-color: black;
   border-width: thin;
+
+  text-align: center;
 }
 
 .workouts_all_row {
@@ -244,6 +250,8 @@ html, body {
   border-style: solid;
   border-color: black;
   border-width: thin;
+
+  text-align: center;
 }
 
 .user_profile1 {

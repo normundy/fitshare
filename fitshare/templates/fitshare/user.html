@@ -12,13 +12,13 @@
 <div class="user_profile2">
   {% for workout in workouts %}
   <div class="view_workout_one1">
-    <span>Workout name: {{ workout.name }}</span>
-    <span>Type: {{ workout.type }}</span>
+    <span>{{ workout.name }} | </span>
+    <span>{{ workout.type }}</span>
   </div>
     {% for exercise in workout.exercises %}
     <div class="view_workout_one2">
-      <span>Exercise name: {{ exercise.exercise_id.name }}</span>
-      <span>Sets: {{ exercise.sets }}</span>
+      <span>{{ exercise.exercise_id.name }} | </span>
+      <span>Sets: {{ exercise.sets }} | </span>
       <span>Reps: {{ exercise.reps }}</span>
     </div>
     {% endfor %}

@@ -8,8 +8,8 @@
   </div>
   {% for workout in workouts %}
   <div class="workouts_all_row">
-    <span>Name: <a href="/fitshare/view_workout/{{ workout.id }}">{{ workout.name }}</a></span>
-    <span>Type: {{ workout.type }}</span>
+    <span><a href="/fitshare/view_workout/{{ workout.id }}">{{ workout.name }}</a> | </span>
+    <span>{{ workout.type }}</span>
   </div>
   {% endfor %}
 </div>

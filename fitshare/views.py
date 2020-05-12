@@ -1,15 +1,16 @@
-from django.http import HttpResponseRedirect
-from django.views import generic
-from django.views import View
-from django.utils import timezone
-from django.shortcuts import render, redirect
-from django.urls import reverse
-from django.contrib.auth.models import User
+from django.contrib import messages
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
+from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.utils import timezone
+from django.views import generic
+from django.views import View
 
 from .models import Workout_e, Workout, Exercise
+from .forms import FS_UserCreationForm
 
 def index(request):
     template_name = 'fitshare/index.html'
@@ -28,6 +29,8 @@ def index(request):
     return render(request, template_name, context=ctx)
 
 def view_workout(request, workout_id):
+    template_name = 'fitshare/view_workout.html'
+
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
@@ -47,9 +50,11 @@ def view_workout(request, workout_id):
         'workout_user' : workout_user,
     }
 
-    return render(request, 'fitshare/view_workout.html', context=ctx)
+    return render(request, template_name, context=ctx)
 
 def workouts(request):
+    template_name = 'fitshare/workouts.html'
+
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
@@ -61,7 +66,7 @@ def workouts(request):
         'recent_workouts': recent_workouts,
     }
 
-    return render(request, 'fitshare/workouts.html', context=ctx)
+    return render(request, template_name, context=ctx)
 
 class FitshareLogin(auth_views.LoginView):
 
@@ -78,26 +83,30 @@ class FitshareLogin(auth_views.LoginView):
         return ctx
 
 def register(request):
+    template_name = 'fitshare/register.html'
+
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
     if request.method == 'POST':
-        f = UserCreationForm(request.POST)
+        f = FS_UserCreationForm(request.POST)
         if f.is_valid():
             f.save()
             messages.success(request, 'Registered succesfully')
             return redirect(reverse('fitshare:index'))
     else:
-        f = UserCreationForm()
+        f = FS_UserCreationForm()
 
     ctx = {
         'recent_workouts': recent_workouts,
         'form': f,
     }
 
-    return render(request, 'fitshare/register.html', context=ctx)
+    return render(request, template_name, context=ctx)
 
 def user_profile(request, user_id):
+    template_name = 'fitshare/user.html'
+
     # Get the 10 most recent workouts
     recent_workouts = Workout.objects.order_by('-updated_date')[:10]
 
@@ -117,7 +126,7 @@ def user_profile(request, user_id):
         'workouts': workouts,
     }
 
-    return render(request, 'fitshare/user.html', context=ctx)
+    return render(request, template_name, context=ctx)
 
 def create_workout_tuple(workout_name, workout_type, user):
     workout_created_date = timezone.now()

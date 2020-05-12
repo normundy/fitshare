@@ -8,13 +8,13 @@
 </div>
 <div class="view_workout_one">
   <div class="view_workout_one1">
-    <span>Workout name: {{ workout.name }}</span>
-    <span>Type: {{ workout.type }}</span>
+    <span>{{ workout.name }} | </span>
+    <span>{{ workout.type }}</span>
   </div>
   {% for w in workout_e %}
   <div class="view_workout_one2">
-    <span>Exercise name: {{ w.exercise_id.name }}</span>
-    <span>Sets: {{ w.sets }}</span>
+    <span>{{ w.exercise_id.name }} | </span>
+    <span>Sets: {{ w.sets }} | </span>
     <span>Reps: {{ w.reps }}</span>
   </div>
   {% endfor %}

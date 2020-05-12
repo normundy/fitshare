@@ -14,3 +14,5 @@ class IndexViewTests(TestCase):
         """
         10 most recent workouts displayed on the side pane
         """
+        response = self.client.get(reverse('fitshare:index'))
+        self.assertEqual(response.status_code, 200)
